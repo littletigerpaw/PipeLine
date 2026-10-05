@@ -1,4 +1,11 @@
-function ProductCard({ product, onAdd }) {
+import type { Product } from '../types';
+
+interface ProductCardProps {
+  product: Product;
+  onAdd: (product: Product) => void;
+}
+
+function ProductCard({ product, onAdd }: ProductCardProps) {
   return (
     <article className="product-card">
       <img

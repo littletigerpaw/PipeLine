@@ -1,4 +1,13 @@
-function Cart({ items, onIncrease, onDecrease, onCheckout }) {
+import type { CartItem } from '../types';
+
+interface CartProps {
+  items: CartItem[];
+  onIncrease: (productId: number) => void;
+  onDecrease: (productId: number) => void;
+  onCheckout?: () => void;
+}
+
+function Cart({ items, onIncrease, onDecrease, onCheckout }: CartProps) {
   return (
     <aside className="cart-panel" aria-label="Shopping cart">
       <h2>Cart</h2>

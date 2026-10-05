@@ -1,8 +1,15 @@
 import { useMemo, useState } from 'react';
+import type { CartItem } from '../types';
 
-function CheckoutForm({ items, total, onBack }) {
-  const [paymentMethod, setPaymentMethod] = useState('card');
-  const [shippingMethod, setShippingMethod] = useState('standard');
+interface CheckoutFormProps {
+  items: CartItem[];
+  total: number;
+  onBack: () => void;
+}
+
+function CheckoutForm({ items, total, onBack }: CheckoutFormProps) {
+  const [paymentMethod, setPaymentMethod] = useState<'card' | 'crypto'>('card');
+  const [shippingMethod, setShippingMethod] = useState<'standard' | 'expedited'>('standard');
   const [submitted, setSubmitted] = useState(false);
 
   const shippingCost = useMemo(
@@ -12,7 +19,7 @@ function CheckoutForm({ items, total, onBack }) {
 
   const grandTotal = total + shippingCost;
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitted(true);
   };

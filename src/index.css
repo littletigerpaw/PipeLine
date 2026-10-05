@@ -1,0 +1,252 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0f172a;
+  background: #f8fafc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #f8fafc;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(59, 130, 246, 0.18), transparent 30%),
+    #f8fafc;
+}
+
+button {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.storefront {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 28px;
+  gap: 20px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #2563eb;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+h1 {
+  margin: 8px 0 0;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.cart-summary {
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 999px;
+}
+
+.catalog-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card,
+.cart-panel {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.05);
+}
+
+.product-card {
+  padding: 18px;
+}
+
+.product-image {
+  height: 140px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  margin-bottom: 14px;
+}
+
+.product-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+}
+
+.product-card p {
+  margin: 0;
+  color: #475569;
+}
+
+.product-meta {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.product-card button,
+.qty-button,
+.cart-panel button {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.product-card button {
+  background: #2563eb;
+  color: white;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+.product-card button:hover,
+.qty-button:hover,
+.cart-panel button:hover {
+  transform: translateY(-1px);
+}
+
+.cart-panel {
+  padding: 20px;
+}
+
+.cart-panel h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.cart-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.cart-panel li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.cart-panel li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cart-item-details strong {
+  font-size: 0.98rem;
+}
+
+.cart-item-details span {
+  color: #475569;
+  font-size: 0.85rem;
+}
+
+.quantity-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.qty-button {
+  width: 26px;
+  height: 26px;
+  background: #e2e8f0;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.quantity-value {
+  min-width: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.cart-empty {
+  margin: 0;
+  color: #64748b;
+}
+
+.totals {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 1.1rem;
+}
+
+.totals strong {
+  font-size: 1.6rem;
+}
+
+@media (max-width: 768px) {
+  .topbar,
+  .catalog-layout,
+  .totals {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .topbar {
+    justify-content: stretch;
+    align-items: start;
+  }
+}
